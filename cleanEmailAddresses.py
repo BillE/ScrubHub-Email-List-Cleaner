@@ -65,6 +65,7 @@ if os.path.exists(originalFile):
 else:
     exitWithUsageError("Could not read file: " + scrubbedFile)
 
+# This is based on a fixed file format of lastName, firstName, email
 dictReader = csv.DictReader(open(originalFile, 'r'), fieldnames = ['lastName', 'firstName', 'email'],
                         delimiter = ',', quotechar = '"')
 
