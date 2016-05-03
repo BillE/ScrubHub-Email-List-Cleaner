@@ -1,11 +1,12 @@
 # ScrubHub-Email-List-Cleaner
-use the results of a scrubbed email list to generate a clean list
+Uses the results of a scrubbed email list to generate a clean list of records in csv format.
 
-steps:
-1. read from original list with three fields: email, firstName, lastName
-for each email address in original list, search for email address from scrubbed list
-when we have a match, extract the result (we will use only 'Email Valid' here and ignore
-both failures and uncertain results) and add full line from original list to new list
+Reads from original list with three fields: email, firstName, lastName.
+For each record in original list, searches for email address from scrubbed list.
+When a match is found, extracts the result and adds full line from original list to new list
+
+Currently, StrikeIron uses to result codes to indicate a valid email: 'Email Valid' and 'Valid'.
+We use only these status codes, ignoring any vague results.
 
 usage: python3 cleanEmailAddresses.py [originalFile] [scrubbedFile] [outputFile]
 
